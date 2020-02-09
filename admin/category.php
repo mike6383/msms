@@ -13,7 +13,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 
 if(isset($_POST['submit']))
 {
-	$category=$_POST['department'];
+	$department=$_POST['department'];
 	$description=$_POST['description'];
 $sql=mysqli_query($con,"insert into department(departmentName,departmentDescription) values('$department','$description')");
 $_SESSION['msg']="Department Created !!";
@@ -51,7 +51,7 @@ if(isset($_GET['del']))
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Department</h3>
+								<h3>Category</h3>
 							</div>
 							<div class="module-body">
 
@@ -77,7 +77,7 @@ if(isset($_GET['del']))
 			<form class="form-horizontal row-fluid" name="department" method="post" >
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Department Name</label>
+<label class="control-label" for="basicinput">Department or category Name</label>
 <div class="controls">
 <input type="text" placeholder="Enter department Name"  name="department" class="span8 tip" required>
 </div>
@@ -87,13 +87,13 @@ if(isset($_GET['del']))
 <div class="control-group">
 											<label class="control-label" for="basicinput">Description</label>
 											<div class="controls">
-												<textarea class="span8" name="description" rows="5"></textarea>
+												<textarea class="span8" name="description" rows="5" required></textarea>
 											</div>
 										</div>
 
 	<div class="control-group">
 											<div class="controls">
-												<button type="submit" name="submit" class="btn">Create</button>
+												<button type="submit" name="submit" class="btn btn-primary">Create</button>
 											</div>
 										</div>
 									</form>
@@ -110,7 +110,7 @@ if(isset($_GET['del']))
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>Department</th>
+											<th>Category</th>
 											<th>Description</th>
 											<th>Creation date</th>
 											<th>Last Updated</th>

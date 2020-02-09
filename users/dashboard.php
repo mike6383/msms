@@ -37,6 +37,19 @@ else{ ?>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+      .blue {
+      color: blue !important;
+        background-color: #fff;
+        box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+        margin:3px;
+      }
+
+      .blue:hover {
+        transform: scale(1);
+      }
+    </style>
   </head>
 
   <body>
@@ -48,7 +61,7 @@ else{ ?>
           <section class="wrapper">
 
               <div class="row">
-                  <div class="col-lg-9 main-chart">
+                  <div class="col-lg-9 main-chart d-flex justify-space-between">
 
 
                   	<div class="col-md-2 col-sm-2 box0">
@@ -59,7 +72,7 @@ else{ ?>
 
 
 
-                  		<div class="col-md-2 col-sm-2 box0">
+                  		<div class="col-md-2 col-sm-2 box0 blue">
                   			<div class="box1">
 					  			<span class="li_news"></span>
                                 <?php
@@ -69,12 +82,12 @@ $num1 = mysqli_num_rows($rt);
 {?>
 					  			<h3><?php echo htmlentities($num1);?></h3>
                   			</div>
-					  			<p><?php echo htmlentities($num1);?> Complaints not Processed yet</p>
+					  			<p class="blue"><?php echo htmlentities($num1);?> Complaints not Processed yet</p>
                   		</div>
                       <?php }?>
 
 
-                      <div class="col-md-2 col-sm-2 box0">
+                      <div class="col-md-2 col-sm-2 box0 blue">
                         <div class="box1">
                   <span class="li_news"></span>
                     <?php
@@ -84,11 +97,11 @@ $num1 = mysqli_num_rows($rt);
 {?>
                   <h3><?php echo htmlentities($num1);?></h3>
                         </div>
-                  <p><?php echo htmlentities($num1);?> Complaints Status in process</p>
+                  <p class="blue"><?php echo htmlentities($num1);?> Complaints Status in process</p>
                       </div>
   <?php }?>
 
-                      <div class="col-md-2 col-sm-2 box0">
+                      <div class="col-md-2 col-sm-2 box0 blue">
                         <div class="box1">
                   <span class="li_news"></span>
                        <?php
@@ -98,7 +111,7 @@ $num1 = mysqli_num_rows($rt);
 {?>
                   <h3><?php echo htmlentities($num1);?></h3>
                         </div>
-                  <p><?php echo htmlentities($num1);?> Complaint has been closed</p>
+                  <p class="blue"><?php echo htmlentities($num1);?> Complaint has been closed</p>
                       </div>
 
 <?php }?>

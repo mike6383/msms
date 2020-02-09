@@ -1,5 +1,5 @@
-<aside>
-          <div id="sidebar"  class="nav-collapse ">
+<aside >
+          <div id="sidebar"  class="nav-collapse " style="background-color: #113 !important">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               

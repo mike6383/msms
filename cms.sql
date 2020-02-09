@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 08, 2020 at 07:04 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Host: localhost:3306
+-- Generation Time: Feb 09, 2020 at 07:15 PM
+-- Server version: 5.7.27-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -87,7 +85,7 @@ INSERT INTO `department` (`id`, `departmentName`, `departmentDescription`, `crea
 (3, 'Finance', 'Student Finance', '2019-10-07 11:33:18', '11-10-2019 01:34:36 AM'),
 (4, 'Library', 'Marambi Library ', '2019-10-07 11:34:39', NULL),
 (5, 'Admission', 'Student Admission', '2019-10-07 11:35:21', NULL),
-(6, '', 'fff', '2020-02-08 09:05:43', NULL);
+(9, 'Academics', 'Academic department', '2020-02-09 13:56:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -147,33 +145,33 @@ CREATE TABLE `tblcomplaints` (
   `complaintNumber` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `category` int(11) NOT NULL,
-  `subcategory` varchar(255) NOT NULL,
   `complaintType` varchar(255) NOT NULL,
-  `state` varchar(255) NOT NULL,
-  `noc` varchar(255) NOT NULL,
   `complaintDetails` mediumtext NOT NULL,
   `complaintFile` varchar(255) DEFAULT NULL,
   `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(50) DEFAULT NULL,
-  `lastUpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+  `lastUpdationDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tblcomplaints`
 --
 
-INSERT INTO `tblcomplaints` (`complaintNumber`, `userId`, `category`, `subcategory`, `complaintType`, `state`, `noc`, `complaintDetails`, `complaintFile`, `regDate`, `status`, `lastUpdationDate`) VALUES
-(25, 4, 3, 'Select Subcategory', 'General Query', 'Uttar Pradesh', 'urgent', 'ojbnd nv cnwbdbmwbdefdffegfbav', 'Screenshot_1.png', '2019-10-07 11:42:25', 'in process', '2019-10-07 11:43:45'),
-(26, 4, 4, 'Select Subcategory', ' Complaint', 'Punjab', 'urgent', 'mkdnbdcukdcb dcd', '', '2019-10-07 13:03:32', 'in process', '2019-10-07 20:44:22'),
-(27, 4, 4, 'Select Subcategory', ' Complaint', 'Punjab', 'urgent', 'mkdnbdcukdcb dcd', '', '2019-10-07 13:04:02', NULL, '0000-00-00 00:00:00'),
-(28, 4, 4, 'Select Subcategory', ' Complaint', 'Punjab', 'urgent', 'mkdnbdcukdcb dcd', '', '2019-10-07 13:04:06', NULL, '0000-00-00 00:00:00'),
-(29, 4, 5, 'Select Subcategory', ' Complaint', 'Uttar Pradesh', 'urgent', 'ekekvihfhifidfodhqehehkqhkehkedh', '', '2019-10-07 13:10:22', NULL, '0000-00-00 00:00:00'),
-(30, 4, 5, 'Select Subcategory', ' Complaint', 'Uttar Pradesh', 'urgent', 'ekekvihfhifidfodhqehehkqhkehkedh', '', '2019-10-07 13:11:29', NULL, '0000-00-00 00:00:00'),
-(31, 4, 3, 'Select Subcategory', ' Complaint', 'Punjab', 'urgent', 'dfgfg', '', '2019-10-07 13:29:59', NULL, '0000-00-00 00:00:00'),
-(32, 4, 4, 'Select Subcategory', 'General Query', 'Punjab', 'urgent', 'nngulfultfftg', '', '2019-10-07 20:42:03', NULL, '0000-00-00 00:00:00'),
-(33, 4, 3, 'Select Subcategory', 'General Query', 'Punjab', 'ddddd', 'fdfht', '', '2019-10-07 20:43:18', NULL, '0000-00-00 00:00:00'),
-(34, 5, 4, 'Select Subcategory', 'General Query', '', 'urgent', 'gtfttttutyjj', 'checklist.docx', '2020-01-13 13:40:29', NULL, '0000-00-00 00:00:00'),
-(35, 5, 3, 'Select Subcategory', 'General Query', '', 'ddddd', 'derregtt', '', '2020-01-13 17:49:48', NULL, '0000-00-00 00:00:00');
+INSERT INTO `tblcomplaints` (`complaintNumber`, `userId`, `category`, `complaintType`, `complaintDetails`, `complaintFile`, `regDate`, `status`, `lastUpdationDate`) VALUES
+(25, 4, 3, 'General Query', 'ojbnd nv cnwbdbmwbdefdffegfbav', 'Screenshot_1.png', '2019-10-07 11:42:25', 'in process', '2019-10-07 11:43:45'),
+(26, 4, 4, ' Complaint', 'mkdnbdcukdcb dcd', '', '2019-10-07 13:03:32', 'in process', '2019-10-07 20:44:22'),
+(27, 4, 4, ' Complaint', 'mkdnbdcukdcb dcd', '', '2019-10-07 13:04:02', NULL, '0000-00-00 00:00:00'),
+(28, 4, 4, ' Complaint', 'mkdnbdcukdcb dcd', '', '2019-10-07 13:04:06', NULL, '0000-00-00 00:00:00'),
+(29, 4, 5, ' Complaint', 'ekekvihfhifidfodhqehehkqhkehkedh', '', '2019-10-07 13:10:22', NULL, '0000-00-00 00:00:00'),
+(30, 4, 5, ' Complaint', 'ekekvihfhifidfodhqehehkqhkehkedh', '', '2019-10-07 13:11:29', NULL, '0000-00-00 00:00:00'),
+(31, 4, 3, ' Complaint', 'dfgfg', '', '2019-10-07 13:29:59', NULL, '0000-00-00 00:00:00'),
+(32, 4, 4, 'General Query', 'nngulfultfftg', '', '2019-10-07 20:42:03', NULL, '0000-00-00 00:00:00'),
+(33, 4, 3, 'General Query', 'fdfht', '', '2019-10-07 20:43:18', NULL, '0000-00-00 00:00:00'),
+(34, 5, 4, 'General Query', 'gtfttttutyjj', 'checklist.docx', '2020-01-13 13:40:29', NULL, '0000-00-00 00:00:00'),
+(35, 5, 3, 'General Query', 'derregtt', '', '2020-01-13 17:49:48', NULL, '0000-00-00 00:00:00'),
+(36, 12, 3, 'General Query', 'This is  the complin', 'c1.jpg', '2020-02-09 14:09:55', NULL, '2020-02-09 14:09:55'),
+(37, 12, 3, 'General Query', 'Am complaining about finance', '', '2020-02-09 14:11:49', NULL, '2020-02-09 14:11:49'),
+(38, 1, 9, 'General Query', 'Hallo from academics', '', '2020-02-09 14:38:09', NULL, '2020-02-09 14:38:09');
 
 -- --------------------------------------------------------
 
@@ -242,7 +240,11 @@ INSERT INTO `users` (`id`, `fullName`, `userEmail`, `password`, `contactNo`, `pi
 (5, 'mk', 'mmk@gmail.com', '48b3d8ef4c38ff28b04ee32e1e296658', 9999, NULL, NULL, '2020-01-13 13:39:08', '0000-00-00 00:00:00', 1),
 (6, 'mmm', 'mike23@gmail.com', 'fb1eaf2bd9f2a7013602be235c305e7a', 99999, NULL, NULL, '2020-02-06 05:47:58', '0000-00-00 00:00:00', 1),
 (7, 'kiimo', 'mike5@gmail.com', '18126e7bd3f84b3f3e4df094def5b7de', 700590090, NULL, NULL, '2020-02-08 07:30:14', '0000-00-00 00:00:00', 1),
-(8, 'lok', 'lok@gmail.com', 'f19852e51c1ab671bfd8b9f4a9dc92f9', 700590090, NULL, NULL, '2020-02-08 08:03:28', '0000-00-00 00:00:00', 1);
+(8, 'lok', 'lok@gmail.com', 'f19852e51c1ab671bfd8b9f4a9dc92f9', 700590090, NULL, NULL, '2020-02-08 08:03:28', '0000-00-00 00:00:00', 1),
+(9, 'kiprono Denis', 'kipronodenis@gmail.com', '25d55ad283aa400af464c76d713c07ad', 799012907, NULL, NULL, '2020-02-08 18:58:54', '0000-00-00 00:00:00', 1),
+(10, 'kiprono Denis', 'kp@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 799012907, NULL, NULL, '2020-02-08 18:59:36', '0000-00-00 00:00:00', 1),
+(11, 'deni', 'kd1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 799012907, NULL, NULL, '2020-02-08 20:31:07', '0000-00-00 00:00:00', 1),
+(12, 'kiprono Denis', 'kiprono@gmail.com', 'f925916e2754e5e03f75dd58a5733251', 799012907, NULL, NULL, '2020-02-09 14:01:06', '0000-00-00 00:00:00', 1);
 
 --
 -- Indexes for dumped tables
@@ -305,50 +307,41 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `complaintremark`
 --
 ALTER TABLE `complaintremark`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `school`
 --
 ALTER TABLE `school`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT for table `subcategory`
 --
 ALTER TABLE `subcategory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tblcomplaints`
 --
 ALTER TABLE `tblcomplaints`
-  MODIFY `complaintNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
+  MODIFY `complaintNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -22,7 +22,9 @@ $compfile=$_FILES["compfile"]["name"];
 
 
 move_uploaded_file($_FILES["compfile"]["tmp_name"],"complaintdocs/".$_FILES["compfile"]["name"]);
-$query=mysqli_query($con,"insert into tblcomplaints(userId,category,subcategory,complaintType,state,noc,complaintDetails,complaintFile) values('$uid','$category','$subcat','$complaintype','$state','$noc','$complaintdetials','$compfile')");
+
+$query=mysqli_query($con,"insert into tblcomplaints(userId,category,complaintType,complaintDetails,complaintFile) values('$uid','$category','$complaintype','$complaintdetials','$compfile')");
+
 // code for show complaint number
 $sql=mysqli_query($con,"select complaintNumber from tblcomplaints  order by complaintNumber desc limit 1");
 while($row=mysqli_fetch_array($sql))
@@ -105,23 +107,26 @@ function getCat(val) {
 <div class="form-group">
 <label class="col-sm-2 col-sm-2 control-label">Category</label>
 <div class="col-sm-4">
-<select name="category" id="category" class="form-control" onChange="getCat(this.value);" required="">
+<select name="category" id="category" class="form-control"  required="">
 <option value="">Select Category</option>
-<?php $sql=mysqli_query($con,"select id,categoryName from category ");
+<?php $sql=mysqli_query($con,"select * from department ");
 while ($rw=mysqli_fetch_array($sql)) {
+  if($rw['departmentName']!=""){
   ?>
-  <option value="<?php echo htmlentities($rw['id']);?>"><?php echo htmlentities($rw['categoryName']);?></option>
+
+  <option value="<?php echo htmlentities($rw['id']);?>"><?php echo htmlentities($rw['departmentName']);?></option>
 <?php
+}
 }
 ?>
 </select>
  </div>
-<label class="col-sm-2 col-sm-2 control-label">Sub Category </label>
+<!-- <label class="col-sm-2 col-sm-2 control-label">Sub Category </label>
  <div class="col-sm-4">
 <select name="subcategory" id="subcategory" class="form-control" onChange="getCat(this.value);" required="" >
 <option value="">Select Subcategory</option>
 </select>
-</div>
+</div> -->
  </div>
 
 
@@ -137,35 +142,16 @@ while ($rw=mysqli_fetch_array($sql)) {
                 </select>
 </div>
 
-<label class="col-sm-2 col-sm-2 control-label">School</label>
-<div class="col-sm-4">
-<select name="School" required="required" class="form-control">
-<option value="">Select School</option>
-<?php $sql=mysqli_query($con,"select SchoolName from School ");
-while ($rw=mysqli_fetch_array($sql)) {
-  ?>
-  <option value="<?php echo htmlentities($rw['SchoolName']);?>"><?php echo htmlentities($rw['SchoolName']);?></option>
-<?php
-}
-?>
 
-</select>
-</div>
 </div>
 
 
-<div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Nature of Complaint</label>
-<div class="col-sm-4">
-<input type="text" name="noc" required="required" value="" required="" class="form-control">
-</div>
 
-</div>
 
 <div class="form-group">
 <label class="col-sm-2 col-sm-2 control-label">Complaint Details (max 2000 words) </label>
 <div class="col-sm-6">
-<textarea  name="complaindetails" required="required" cols="10" rows="10" class="form-control" maxlength="2000"></textarea>
+<textarea  name="complaindetails" required cols="10" rows="10" class="form-control" maxlength="2000"></textarea>
 </div>
 </div>
 <div class="form-group">
@@ -178,7 +164,7 @@ while ($rw=mysqli_fetch_array($sql)) {
 
 
                           <div class="form-group">
-                           <div class="col-sm-10" style="padding-left:25% ">
+                           <div class="col-sm-10" style="padding-left:25%  margin:10px ">
 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 </div>
 </div>

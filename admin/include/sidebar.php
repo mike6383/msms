@@ -2,16 +2,16 @@
 					<div class="sidebar">
 
 
-<ul class="widget widget-menu unstyled">
-							<li>
-								<a class="collapsed" data-toggle="collapse" href="#togglePages">
+<ul class="widget widget-menu unstyled " >
+							<li style="background:green">
+								<a class="collapsed" data-toggle="collapse" href="#togglePages" style="color:white; ">
 									<i class="menu-icon icon-cog"></i>
 									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
 									Manage Students Complaints
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
 									<li>
-										<a href="notprocess-complaint.php">
+										<a href="notprocess-complaint.php" style="color:white; ">
 											<i class="icon-tasks"></i>
 											Not Process Yet Complaint
 											<?php
@@ -24,7 +24,7 @@ $num1 = mysqli_num_rows($rt);
 										</a>
 									</li>
 									<li>
-										<a href="inprocess-complaint.php">
+										<a href="inprocess-complaint.php" style="color:white; ">
 											<i class="icon-tasks"></i>
 											Pending Complaint
                    <?php
@@ -36,7 +36,7 @@ $num1 = mysqli_num_rows($rt);
 										</a>
 									</li>
 									<li>
-										<a href="closed-complaint.php">
+										<a href="closed-complaint.php" style="color:white; ">
 											<i class="icon-inbox"></i>
 											Closed Complaints
 	     <?php
@@ -52,7 +52,7 @@ $num1 = mysqli_num_rows($rt);
 							</li>
 
 							<li>
-								<a href="manage-users.php">
+								<a href="manage-users.php" style="color:white; ">
 									<i class="menu-icon icon-group"></i>
 									Manage Students
 								</a>
@@ -61,18 +61,18 @@ $num1 = mysqli_num_rows($rt);
 
 
 						<ul class="widget widget-menu unstyled">
-                                <li><a href="category.php"><i class="menu-icon icon-tasks"></i> Add Department </a></li>
-                                <li><a href="subcategory.php"><i class="menu-icon icon-tasks"></i>Add Sub-Department</a></li>
-                                <li><a href="state.php"><i class="menu-icon icon-paste"></i>Add School</a></li>
+                                <li><a href="category.php" style="color:white; "><i class="menu-icon icon-tasks"></i> Add Category </a></li>
+                                <li><a href="report.php" style="color:white; "><i class="menu-icon icon-tasks"></i>Reports</a></li>
+                              <!--   <li><a href="state.php"><i class="menu-icon icon-paste"></i>Add School</a></li> -->
 
 
                             </ul><!--/.widget-nav-->
 
 						<ul class="widget widget-menu unstyled">
-							<li><a href="user-logs.php"><i class="menu-icon icon-tasks"></i>Students Login Log </a></li>
+							<li><a href="user-logs.php" style="color:white; "><i class="menu-icon icon-tasks"></i>Students Login Log </a></li>
 
 							<li>
-								<a href="logout.php">
+								<a href="logout.php" style="color:white; ">
 									<i class="menu-icon icon-signout"></i>
 									Logout
 								</a>

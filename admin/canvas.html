@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Complaint Percentage "
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 79.45, label: "Finance"},
+			{y: 7.31, label: "Admissions"},
+			{y: 7.06, label: "Academics"},
+			{y: 4.91, label: "Library"},
+			{y: 1.26, label: "Games & sports"},
+          {y: 1.26, label: "Accomodation"}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<script src="./canvasjs.min.js"></script>
+</body>
+</html>
