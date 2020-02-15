@@ -2,6 +2,8 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+require('../sendmessage.php');
+
 if(strlen($_SESSION['login'])==0)
   {
 header('location:index.php');
@@ -12,9 +14,7 @@ if(isset($_POST['submit']))
 {
 $uid=$_SESSION['id'];
 $category=$_POST['category'];
-$subcat=$_POST['subcategory'];
 $complaintype=$_POST['complaintype'];
-$state=$_POST['state'];
 $noc=$_POST['noc'];
 $complaintdetials=$_POST['complaindetails'];
 $compfile=$_FILES["compfile"]["name"];
@@ -25,14 +25,19 @@ move_uploaded_file($_FILES["compfile"]["tmp_name"],"complaintdocs/".$_FILES["com
 
 $query=mysqli_query($con,"insert into tblcomplaints(userId,category,complaintType,complaintDetails,complaintFile) values('$uid','$category','$complaintype','$complaintdetials','$compfile')");
 
-// code for show complaint number
-$sql=mysqli_query($con,"select complaintNumber from tblcomplaints  order by complaintNumber desc limit 1");
-while($row=mysqli_fetch_array($sql))
-{
- $cmpn=$row['complaintNumber'];
+if($query){
+  sendMessage('+254701241057',"Comlaint registered");
+  // code for show complaint number
+  $sql=mysqli_query($con,"select complaintNumber from tblcomplaints  order by complaintNumber desc limit 1");
+  while($row=mysqli_fetch_array($sql))
+  {
+   $cmpn=$row['complaintNumber'];
+  }
+  $complainno=$cmpn;
+  echo '<script> alert("Your complain has been successfully filled and your complaintno is  "+"'.$complainno.'")</script>';
 }
-$complainno=$cmpn;
-echo '<script> alert("Your complain has been successfully filled and your complaintno is  "+"'.$complainno.'")</script>';
+
+
 }
 ?>
 

@@ -64,7 +64,8 @@ echo htmlentities($msg);
 		             <span id="user-availability-status1" style="font-size:12px;"></span>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password" required="required" name="password"><br >
-		             <input type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" required="required" autofocus>
+		             <input type="text" class="form-control" maxlength="12" name="contactno" placeholder="Student Phone no" id="contactNo" onBlur="userAvailability()" name="contactNo" required="required" autofocus>
+								 <span id="user-availability-status1" style="font-size:12px;"></span>
 		            <br>
 
 		            <button class="btn btn-theme btn-block"  type="submit" name="submit" id="submit"><i class="fa fa-user"></i> Register</button>
