@@ -16,7 +16,7 @@ else{ ?>
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>CMS | Complaint Details</title>
+    <title>MUST CMS | Complaint Details</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -55,11 +55,6 @@ while($row=mysqli_fetch_array($query))
               <div class="col-sm-4">
               <p><?php echo htmlentities($row['catname']);?></p>
               </div>
-<label class="col-sm-2 col-sm-2 control-label"><b>Sub Category :</b> </label>
-              <div class="col-sm-4">
-              <p><?php echo htmlentities($row['subcategory']);?></p>
-              </div>
-            </div>
 
 
 
@@ -68,19 +63,11 @@ while($row=mysqli_fetch_array($query))
               <div class="col-sm-4">
               <p><?php echo htmlentities($row['complaintType']);?></p>
               </div>
-<label class="col-sm-2 col-sm-2 control-label"><b>State :</b></label>
-              <div class="col-sm-4">
-              <p><?php echo htmlentities($row['state']);?></p>
-              </div>
-            </div>
 
 
 
-  <div class="row mt">
-            <label class="col-sm-2 col-sm-2 control-label"><b>Nature of Complaint :</b></label>
-              <div class="col-sm-4">
-              <p><?php echo htmlentities($row['noc']);?></p>
-              </div>
+
+
 <label class="col-sm-2 col-sm-2 control-label"><b>File :</b></label>
               <div class="col-sm-4">
               <p><?php $cfile=$row['complaintFile'];

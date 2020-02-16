@@ -4,14 +4,19 @@
 
 <ul class="widget widget-menu unstyled " >
 							<li style="background:green">
-								<a class="collapsed" data-toggle="collapse" href="#togglePages" style="color:white; ">
+								<a class="collapsed" data-toggle="collapse" href="#togglePages"style="color:White;background-color: black"  >
 									<i class="menu-icon icon-cog"></i>
 									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
 									Manage Students Complaints
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
+<<<<<<< HEAD
 									<li class="bg-dark" style="background-color:black">
 										<a href="notprocess-complaint.php" style="color:white; ">
+=======
+									<li>
+										<a href="notprocess-complaint.php" style="color:white;background-color: black">
+>>>>>>> ed05862d30c964b823144eecac60dafebef044d0
 											<i class="icon-tasks"></i>
 											Not Process Yet Complaint
 											<?php
@@ -23,8 +28,13 @@ $num1 = mysqli_num_rows($rt);
 											<?php } ?>
 										</a>
 									</li>
+<<<<<<< HEAD
 									<li style="background-color:black">
 										<a href="inprocess-complaint.php" style="color:white; ">
+=======
+									<li>
+										<a href="inprocess-complaint.php" style="color:white; background-color: black">
+>>>>>>> ed05862d30c964b823144eecac60dafebef044d0
 											<i class="icon-tasks"></i>
 											Pending Complaint
                    <?php
@@ -35,8 +45,13 @@ $num1 = mysqli_num_rows($rt);
 <?php } ?>
 										</a>
 									</li>
+<<<<<<< HEAD
 									<li style="background-color:black">
 										<a href="closed-complaint.php" style="color:white; ">
+=======
+									<li>
+										<a href="closed-complaint.php" style="color:white;background-color: black ">
+>>>>>>> ed05862d30c964b823144eecac60dafebef044d0
 											<i class="icon-inbox"></i>
 											Closed Complaints
 	     <?php

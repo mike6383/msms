@@ -52,21 +52,21 @@ exit();
 				</a>
 
 			  	<a class="brand" href="index.html">
-			  		CMS | Admin
+			  		MUST CMS | Admin
 			  	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
+
 					<ul class="nav pull-right">
 
 						<li><a href="http://localhost/cms/">
 						Back to Portal
-						
+
 						</a></li>
 
-						
 
-						
+
+
 					</ul>
 				</div><!-- /.nav-collapse -->
 			</div>
@@ -100,7 +100,7 @@ exit();
 							<div class="control-group">
 								<div class="controls clearfix">
 									<button type="submit" class="btn btn-primary pull-right" name="submit">Login</button>
-									
+
 								</div>
 							</div>
 						</div>
@@ -112,9 +112,9 @@ exit();
 
 	<div class="footer">
 		<div class="container">
-			 
 
-			<b class="copyright">&copy; 2017 CMS </b> All rights reserved.
+
+			<b class="copyright">&copy; 2020 MUST CMS </b> All rights reserved.
 		</div>
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
