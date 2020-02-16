@@ -65,7 +65,12 @@ window.onload = function() {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title: {
-		text: "Complaint Percentage - 2020"
+
+		text:	<?php if(count($results)>0){	echo '"Complaint Percentage - 2020"';
+	}else {
+		echo '"No Completed complaints Yet"';
+	}
+		 ?>
 	},
 	data: [{
 		type: "pie",
@@ -74,10 +79,13 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		indexLabel: "{label} {y}",
 		dataPoints: [
 		<?php
-       foreach ($results as $key => $value) {
-       	echo "{y: ".$value['percent'].", label: \"".$value['category']."\"},";
-       	# code...
-       }
+		if(count($results>0))  {
+
+			foreach ($results as $key => $value) {
+				echo "{y: ".$value['percent'].", label: \"".$value['category']."\"},";
+				# code...
+			}
+		}
 		 ?>
 			// {y: 79.45, label: "Finance"},
 			// {y: 7.31, label: "Admissions"},

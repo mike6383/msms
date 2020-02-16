@@ -1,14 +1,14 @@
 <?php
 include('includes/config.php');
-error_reporting(0);
+error_reporting(-1);
 if(isset($_POST['submit']))
 {
 	$fullname=$_POST['fullname'];
-	$email=$_POST['email'];
+	$regno=$_POST['regno'];
 	$password=md5($_POST['password']);
 	$contactno=$_POST['contactno'];
 	$status=1;
-	$query=mysqli_query($con,"insert into users(fullName,userEmail,password,contactNo,status) values('$fullname','$email','$password','$contactno','$status')");
+	$query=mysqli_query($con,"insert into users(fullName,userRegNo,password,contactNo,status) values('$fullname','$regno','$password','$contactno','$status')");
 	$msg="Registration successfull. Now You can login !";
 }
 ?>
@@ -32,10 +32,23 @@ function userAvailability() {
 $("#loaderIcon").show();
 jQuery.ajax({
 url: "check_availability.php",
-data:'email='+$("#email").val(),
+data:'regno='+$("#regno").val(),
 type: "POST",
 success:function(data){
 $("#user-availability-status1").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+}
+function check() {
+$("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availability.php",
+data:'phone='+$("#phone").val(),
+type: "POST",
+success:function(data){
+$("#user-availability-status2").html(data);
 $("#loaderIcon").hide();
 },
 error:function (){}
@@ -60,12 +73,14 @@ echo htmlentities($msg);
 		        <div class="login-wrap">
 		         <input type="text" class="form-control" placeholder="Student Name" name="fullname" required="required" autofocus>
 		            <br>
-		            <input type="email" class="form-control" placeholder="Student email" id="email" onBlur="userAvailability()" name="email" required="required">
+		            <input type="text" class="form-control" placeholder="Registration No." id="regno" onBlur="userAvailability()" name="regno" required="required">
 		             <span id="user-availability-status1" style="font-size:12px;"></span>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password" required="required" name="password"><br >
-		             <input type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" required="required" autofocus>
+		             <input id="phone" type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" required="required" autofocus onBlur="check()">
+								 <span id="user-availability-status2" style="font-size:12px;"></span>
 		            <br>
+
 
 		            <button class="btn btn-theme btn-block"  type="submit" name="submit" id="submit"><i class="fa fa-user"></i> Register</button>
 		            <hr>

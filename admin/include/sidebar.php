@@ -10,7 +10,7 @@
 									Manage Students Complaints
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
-									<li>
+									<li class="bg-dark" style="background-color:black">
 										<a href="notprocess-complaint.php" style="color:white; ">
 											<i class="icon-tasks"></i>
 											Not Process Yet Complaint
@@ -23,7 +23,7 @@ $num1 = mysqli_num_rows($rt);
 											<?php } ?>
 										</a>
 									</li>
-									<li>
+									<li style="background-color:black">
 										<a href="inprocess-complaint.php" style="color:white; ">
 											<i class="icon-tasks"></i>
 											Pending Complaint
@@ -35,12 +35,12 @@ $num1 = mysqli_num_rows($rt);
 <?php } ?>
 										</a>
 									</li>
-									<li>
+									<li style="background-color:black">
 										<a href="closed-complaint.php" style="color:white; ">
 											<i class="icon-inbox"></i>
 											Closed Complaints
 	     <?php
-  $status="closed";
+  $status="completed";
 $rt = mysqli_query($con,"SELECT * FROM tblcomplaints where status='$status'");
 $num1 = mysqli_num_rows($rt);
 {?><b class="label green pull-right"><?php echo htmlentities($num1); ?></b>
