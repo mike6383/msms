@@ -4,24 +4,24 @@ error_reporting(0);
 include("includes/config.php");
 if(isset($_POST['submit']))
 {
-$ret=mysqli_query($con,"SELECT * FROM users WHERE userEmail='".$_POST['username']."' and password='".md5($_POST['password'])."'");
+$ret=mysqli_query($con,"SELECT * FROM users WHERE userRegNo='".$_POST['regno']."' and password='".md5($_POST['password'])."'");
 $num=mysqli_fetch_array($ret);
 if($num>0)
 {
 $extra="dashboard.php";//
-$_SESSION['login']=$_POST['username'];
+$_SESSION['login']=$_POST['regno'];
 $_SESSION['id']=$num['id'];
 $host=$_SERVER['HTTP_HOST'];
 $uip=$_SERVER['REMOTE_ADDR'];
 $status=1;
-$log=mysqli_query($con,"insert into userlog(uid,username,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
+$log=mysqli_query($con,"insert into userlog(uid,userRegNo,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
 $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 header("location:http://$host$uri/$extra");
 exit();
 }
 else
 {
-$_SESSION['login']=$_POST['username'];
+$_SESSION['login']=$_POST['regno'];
 $uip=$_SERVER['REMOTE_ADDR'];
 $status=0;
 mysqli_query($con,"insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
@@ -35,7 +35,7 @@ $extra="login.php";
 
 if(isset($_POST['change']))
 {
-   $email=$_POST['email'];
+   $email=$_POST['regno'];
     $contact=$_POST['contact'];
     $password=md5($_POST['password']);
 $query=mysqli_query($con,"SELECT * FROM users WHERE userEmail='$email' and contactNo='$contact'");
@@ -107,7 +107,7 @@ echo htmlentities($errormsg);
 echo htmlentities($msg);
 		        		}?></p>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" name="username" placeholder="Student email"  required autofocus>
+		            <input type="text" class="form-control" name="regno" placeholder="Student Regno"  required autofocus>
 		            <br>
 		            <input type="password" class="form-control" name="password" required placeholder="Password">
 		            <label class="checkbox">
@@ -139,7 +139,7 @@ echo htmlentities($msg);
 		                      </div>
 		                      <div class="modal-body">
 		                          <p>Enter your details below to reset your password.</p>
-<input type="email" name="email" placeholder="Email" autocomplete="off" class="form-control" required><br >
+<input type="email" name="regno" placeholder="Regno" autocomplete="off" class="form-control" required><br >
 <input type="text" name="contact" placeholder="contact No" autocomplete="off" class="form-control" required><br>
  <input type="password" class="form-control" placeholder="New Password" id="password" name="password"  required ><br />
 <input type="password" class="form-control unicase-form-control text-input" placeholder="Confirm Password" id="confirmpassword" name="confirmpassword" required >
