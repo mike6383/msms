@@ -10,13 +10,13 @@
 									Manage Students Complaints
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
-<<<<<<< HEAD
+
 									<li class="bg-dark" style="background-color:black">
 										<a href="notprocess-complaint.php" style="color:white; ">
-=======
+
 									<li>
 										<a href="notprocess-complaint.php" style="color:white;background-color: black">
->>>>>>> ed05862d30c964b823144eecac60dafebef044d0
+
 											<i class="icon-tasks"></i>
 											Not Process Yet Complaint
 											<?php
@@ -28,13 +28,13 @@ $num1 = mysqli_num_rows($rt);
 											<?php } ?>
 										</a>
 									</li>
-<<<<<<< HEAD
+
 									<li style="background-color:black">
 										<a href="inprocess-complaint.php" style="color:white; ">
-=======
+
 									<li>
 										<a href="inprocess-complaint.php" style="color:white; background-color: black">
->>>>>>> ed05862d30c964b823144eecac60dafebef044d0
+
 											<i class="icon-tasks"></i>
 											Pending Complaint
                    <?php
@@ -45,13 +45,13 @@ $num1 = mysqli_num_rows($rt);
 <?php } ?>
 										</a>
 									</li>
-<<<<<<< HEAD
+
 									<li style="background-color:black">
 										<a href="closed-complaint.php" style="color:white; ">
-=======
+
 									<li>
 										<a href="closed-complaint.php" style="color:white;background-color: black ">
->>>>>>> ed05862d30c964b823144eecac60dafebef044d0
+
 											<i class="icon-inbox"></i>
 											Closed Complaints
 	     <?php

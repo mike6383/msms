@@ -7,7 +7,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-date_default_timezone_set('Asia/Kolkata');// change according timezone
+date_default_timezone_set('Africa/Nairobi');// change according timezone
 $currentTime = date( 'd-m-Y h:i:s A', time () );
 
 if(isset($_GET['uid']) && $_GET['action']=='del')
@@ -67,7 +67,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 										<tr>
 											<th>#</th>
 											<th> Name</th>
-											<th>Email </th>
+											<th>RegNo </th>
 											<th>Contact no</th>
 											<th>Reg. Date </th>
 											<th>Action</th>
@@ -84,7 +84,7 @@ while($row=mysqli_fetch_array($query))
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($row['fullName']);?></td>
-											<td><?php echo htmlentities($row['userEmail']);?></td>
+											<td><?php echo htmlentities($row['userRegNo']);?></td>
 											<td> <?php echo htmlentities($row['contactNo']);?></td>
 
 											<td><?php echo htmlentities($row['regDate']);?></td>

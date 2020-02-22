@@ -64,9 +64,12 @@ error:function (){}
 		      <form class="form-login" method="post">
 		        <h2 class="form-login-heading">Student Registration</h2>
 		        <p style="padding-left: 1%; color: green">
-		        	<?php if($msg){
-echo htmlentities($msg);
-		        		}?>
+							<?php if (isset($msg)) {
+								// code...
+
+								echo "registration successfull";
+							} ?>
+
 
 
 		        </p>
@@ -77,13 +80,12 @@ echo htmlentities($msg);
 		             <span id="user-availability-status1" style="font-size:12px;"></span>
 		            <br>
 		            <input type="password" class="form-control" placeholder="Password" required="required" name="password"><br >
-<<<<<<< HEAD
+
 		             <input id="phone" type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" required="required" autofocus onBlur="check()">
 								 <span id="user-availability-status2" style="font-size:12px;"></span>
-=======
-		             <input type="text" class="form-control" maxlength="12" name="contactno" placeholder="Student Phone no" id="contactNo" onBlur="userAvailability()" name="contactNo" required="required" autofocus>
-								 <span id="user-availability-status1" style="font-size:12px;"></span>
->>>>>>> ed05862d30c964b823144eecac60dafebef044d0
+
+
+
 		            <br>
 
 

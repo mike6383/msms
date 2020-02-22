@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
-  { 
+  {
 header('location:index.php');
 }
 else{
@@ -36,7 +36,7 @@ $errormsg="Old Password not match !!";
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>CMS | User Change Password</title>
+    <title>MUST CMS | Student Change Password</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -86,7 +86,7 @@ return true;
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> Change Password</h3>
-          	
+
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
@@ -139,9 +139,9 @@ return true;
                           </div>
                           </div>
                           </div>
-                          
-          	
-          	
+
+
+
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
     <?php include("includes/footer.php");?>
@@ -163,22 +163,22 @@ return true;
 
 	<!--custom switch-->
 	<script src="assets/js/bootstrap-switch.js"></script>
-	
+
 	<!--custom tagsinput-->
 	<script src="assets/js/jquery.tagsinput.js"></script>
-	
+
 	<!--custom checkbox & radio-->
-	
+
 	<script type="text/javascript" src="assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-	
+
 	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-	
-	
-	<script src="assets/js/form-component.js"></script>    
-    
-    
+
+
+	<script src="assets/js/form-component.js"></script>
+
+
   <script>
       //custom select box
 

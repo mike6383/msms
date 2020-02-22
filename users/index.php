@@ -4,12 +4,13 @@ error_reporting(0);
 include("includes/config.php");
 if(isset($_POST['submit']))
 {
-$ret=mysqli_query($con,"SELECT * FROM users WHERE userEmail='".$_POST['username']."' and password='".md5($_POST['password'])."'");
+$ret=mysqli_query($con,"SELECT * FROM users WHERE userRegNo='".$_POST['regno']."' and password='".md5($_POST['password'])."'");
 $num=mysqli_fetch_array($ret);
-if($num>0)
+
+if(count($num)>0)
 {
 $extra="dashboard.php";//
-$_SESSION['login']=$_POST['username'];
+$_SESSION['login']=$_POST['regno'];
 $_SESSION['id']=$num['id'];
 $host=$_SERVER['HTTP_HOST'];
 $uip=$_SERVER['REMOTE_ADDR'];
@@ -21,7 +22,7 @@ exit();
 }
 else
 {
-$_SESSION['login']=$_POST['username'];
+$_SESSION['login']=$_POST['regno'];
 $uip=$_SERVER['REMOTE_ADDR'];
 $status=0;
 mysqli_query($con,"insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
@@ -35,10 +36,10 @@ $extra="login.php";
 
 if(isset($_POST['change']))
 {
-   $email=$_POST['email'];
+   $email=$_POST['regno'];
     $contact=$_POST['contact'];
     $password=md5($_POST['password']);
-$query=mysqli_query($con,"SELECT * FROM users WHERE userEmail='$email' and contactNo='$contact'");
+$query=mysqli_query($con,"SELECT * FROM users WHERE userRegNo='$email' and contactNo='$contact'");
 $num=mysqli_fetch_array($query);
 if($num>0)
 {
@@ -62,7 +63,7 @@ $errormsg="Invalid email id or Contact no";
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>CMS | User Login</title>
+    <title> MUST CMS | Student Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -107,7 +108,7 @@ echo htmlentities($errormsg);
 echo htmlentities($msg);
 		        		}?></p>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" name="username" placeholder="Student email"  required autofocus>
+		            <input type="text" class="form-control" name="regno" placeholder="Student regno"  required autofocus>
 		            <br>
 		            <input type="password" class="form-control" name="password" required placeholder="Password">
 		            <label class="checkbox">

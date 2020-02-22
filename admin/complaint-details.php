@@ -146,7 +146,7 @@ while($rw=mysqli_fetch_array($ret))
 											</a><?php } ?></td>
 											<td colspan="4">
 											<a href="javascript:void(0);" onClick="popUpWindow('http://localhost/cms/admin/userprofile.php?uid=<?php echo htmlentities($row['userId']);?>');" title="Update order">
-											 <button type="button" class="btn btn-primary">View User Detials</button></a></td>
+											 <button type="button" class="btn btn-primary">View Student's Detials</button></a></td>
 
 										</tr>
 										<?php  } ?>

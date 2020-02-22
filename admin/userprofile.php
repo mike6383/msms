@@ -56,8 +56,8 @@ while($row=mysqli_fetch_array($ret1))
       <td><?php echo htmlentities($row['regDate']); ?></td>
     </tr>
     <tr height="50">
-      <td><b>User Email:</b></td>
-      <td><?php echo htmlentities($row['userEmail']); ?></td>
+      <td><b>Student RegNo:</b></td>
+      <td><?php echo htmlentities($row['userRegNo']); ?></td>
     </tr>
 
 
@@ -68,7 +68,7 @@ while($row=mysqli_fetch_array($ret1))
 
 
 
-      
+
 
 
         <tr height="50">
