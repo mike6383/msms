@@ -84,8 +84,11 @@ error:function (){}
 		             <input id="phone" type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" required="required" autofocus onBlur="check()">
 								 <span id="user-availability-status2" style="font-size:12px;"></span>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
 		            <br>
 
 

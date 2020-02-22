@@ -15,8 +15,15 @@ if(isset($_POST['submit']))
 {
 $fname=$_POST['fullname'];
 $contactno=$_POST['contactno'];
+<<<<<<< HEAD
 $pincode=$_POST['pincode'];
 $query=mysqli_query($con,"update users set fullName='$fname',contactNo='$contactno' where userEmail='".$_SESSION['login']."'");
+=======
+$address=$_POST['address'];
+
+$pincode=$_POST['pincode'];
+$query=mysqli_query($con,"update users set fullName='$fname',contactNo='$contactno' where userRegNo='".$_SESSION['login']."'");
+>>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
 if($query)
 {
 $successmsg="Profile Successfully !!";
@@ -78,8 +85,13 @@ $errormsg="Profile not updated !!";
  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                       <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg);?></div>
                       <?php }?>
+<<<<<<< HEAD
  <?php $query=mysqli_query($con,"select * from users where userEmail='".$_SESSION['login']."'");
  while($row=mysqli_fetch_array($query))
+=======
+ <?php $query=mysqli_query($con,"select * from users where userRegNo='".$_SESSION['login']."'");
+ while($row=mysqli_fetch_array($query)) 
+>>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
  {
  ?>
 
@@ -92,9 +104,9 @@ $errormsg="Profile not updated !!";
 <div class="col-sm-4">
 <input type="text" name="fullname" required="required" value="<?php echo htmlentities($row['fullName']);?>" class="form-control" >
  </div>
-<label class="col-sm-2 col-sm-2 control-label">User Email </label>
+<label class="col-sm-2 col-sm-2 control-label">User RegNO </label>
  <div class="col-sm-4">
-<input type="email" name="useremail" required="required" value="<?php echo htmlentities($row['userEmail']);?>" class="form-control" readonly>
+<input type="text" name="userRegNo" required="required" value="<?php echo htmlentities($row['userRegNo']);?>" class="form-control" readonly>
 </div>
  </div>
 
@@ -104,45 +116,13 @@ $errormsg="Profile not updated !!";
  <div class="col-sm-4">
 <input type="text" name="contactno" required="required" value="<?php echo htmlentities($row['contactNo']);?>" class="form-control">
 </div>
-<label class="col-sm-2 col-sm-2 control-label">Address </label>
-<div class="col-sm-4">
-<textarea  name="address" required="required" class="form-control"><?php echo htmlentities($row['address']);?></textarea>
-</div>
+
 </div>
 
-<div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">State</label>
-<div class="col-sm-4">
-<select name="state" required="required" class="form-control">
-<option value="<?php echo htmlentities($row['State']);?>"><?php echo htmlentities($st=$row['State']);?></option>
-<?php $sql=mysqli_query($con,"select stateName from state ");
-while ($rw=mysqli_fetch_array($sql)) {
-  if($rw['stateName']==$st)
-  {
-    continue;
-  }
-  else
-  {
-  ?>
-  <option value="<?php echo htmlentities($rw['stateName']);?>"><?php echo htmlentities($rw['stateName']);?></option>
-<?php
-}}
-?>
-
-</select>
-</div>
-<label class="col-sm-2 col-sm-2 control-label">Country </label>
-<div class="col-sm-4">
-<input type="text" name="country" required="required" value="<?php echo htmlentities($row['country']);?>" class="form-control">
-</div>
-</div>
 
 
 <div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Pincode</label>
-<div class="col-sm-4">
-<input type="text" name="pincode" maxlength="6" required="required" value="<?php echo htmlentities($row['pincode']);?>" class="form-control">
-</div>
+
 <label class="col-sm-2 col-sm-2 control-label">Reg Date </label>
 <div class="col-sm-4">
 <input type="text" name="regdate" required="required" value="<?php echo htmlentities($row['regDate']);?>" class="form-control" readonly>

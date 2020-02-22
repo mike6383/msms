@@ -2,7 +2,7 @@
 // session_start();
 // include('include/config.php');
 
-$sql="SELECT category,count(*) as complaints FROM tblcomplaints where status='completed' GROUP BY category";
+$sql="SELECT count(*) as complaints,category FROM `tblcomplaints` join complaintremark on complaintremark.complaintNumber=tblcomplaints.complaintNumber where complaintremark.status='closed' GROUP BY category";
 
 $total_query="Select count(*) as total FROM tblcomplaints";
 $total=mysqli_fetch_assoc(mysqli_query($con,$total_query))['total'];

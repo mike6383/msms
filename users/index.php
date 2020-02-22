@@ -15,7 +15,7 @@ $_SESSION['id']=$num['id'];
 $host=$_SERVER['HTTP_HOST'];
 $uip=$_SERVER['REMOTE_ADDR'];
 $status=1;
-$log=mysqli_query($con,"insert into userlog(uid,username,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
+$log=mysqli_query($con,"insert into userlog(uid,userRegNo,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
 $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 header("location:http://$host$uri/$extra");
 exit();
@@ -108,7 +108,11 @@ echo htmlentities($errormsg);
 echo htmlentities($msg);
 		        		}?></p>
 		        <div class="login-wrap">
+<<<<<<< HEAD
 		            <input type="text" class="form-control" name="regno" placeholder="Student regno"  required autofocus>
+=======
+		            <input type="text" class="form-control" name="regno" placeholder="Student Regno"  required autofocus>
+>>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
 		            <br>
 		            <input type="password" class="form-control" name="password" required placeholder="Password">
 		            <label class="checkbox">
@@ -140,7 +144,7 @@ echo htmlentities($msg);
 		                      </div>
 		                      <div class="modal-body">
 		                          <p>Enter your details below to reset your password.</p>
-<input type="email" name="email" placeholder="Email" autocomplete="off" class="form-control" required><br >
+<input type="email" name="regno" placeholder="Regno" autocomplete="off" class="form-control" required><br >
 <input type="text" name="contact" placeholder="contact No" autocomplete="off" class="form-control" required><br>
  <input type="password" class="form-control" placeholder="New Password" id="password" name="password"  required ><br />
 <input type="password" class="form-control unicase-form-control text-input" placeholder="Confirm Password" id="confirmpassword" name="confirmpassword" required >
