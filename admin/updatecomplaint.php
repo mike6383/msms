@@ -11,6 +11,9 @@ else {
   if(isset($_POST['update']))
   {
 $complaintnumber=$_GET['cid'];
+
+
+
 $status=$_POST['status'];
 $remark=$_POST['remark'];
 $query=mysqli_query($con,"insert into complaintremark(complaintNumber,status,remark) values('$complaintnumber','$status','$remark')");
@@ -18,7 +21,24 @@ $sql=mysqli_query($con,"update tblcomplaints set status='$status' where complain
 
 echo "<script>alert('Complaint details updated successfully');</script>";
 if($query){
-  sendMessage('+254701241057',"Comlaint registered");
+  //select user id fom tblcomplaints where copaintid =complaintNumber
+  $query="SELECT * FROM tblcomplaints WHERE complaintNumber='$complaintnumber'";
+  $result=mysqli_query($con,$query);
+  $userid=mysqli_fetch_assoc($result)['userId'];
+
+
+
+  // select contact no fri users where id =id
+  $query="SELECT * FROM users WHERE id='$userid'";
+  $result=mysqli_query($con,$query);
+  $phoneNumber=mysqli_fetch_assoc($result)['contactNo'];
+  $phone='+254'.$phoneNumber;
+  
+
+
+
+
+  sendMessage($phone,"Dear student your complaint has been succesfully responded to, kindly login to the portal and check the status. Thank you!!");
 }
 
   }

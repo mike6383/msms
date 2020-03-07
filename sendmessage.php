@@ -5,8 +5,8 @@ use AfricasTalking\SDK\AfricasTalking;
 function sendMessage($phoneNumber, $message){
 
   // Set your app credentials
-  $username   = "sandbox";
-  $apiKey     = "c3191471ba26c996f7c2087b23c7b9a8fe0d466f780be00d335aa1477dc9561d";
+  $username   = "Young";
+  $apiKey     = "f0ee52a7ebc3245656ef971e516b77b0b4a239fc39d073afa4de8442daa6975c";
 
   // Initialize the SDK
   $AT         = new AfricasTalking($username, $apiKey);

@@ -78,8 +78,9 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label} {y}",
 		dataPoints: [
-		<?php
-		if(count($results>0))  {
+			<?php
+
+		if(count($results)>0)  {
 
 			foreach ($results as $key => $value) {
 				echo "{y: ".$value['percent'].", label: \"".$value['category']."\"},";
@@ -92,7 +93,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 			// {y: 7.06, label: "Academics"},
 			// {y: 4.91, label: "Library"},
 			// {y: 1.26, label: "Games & sports"},
-   //        {y: 1.26, label: "Accomodation"}
+      // {y: 1.26, label: "Accomodation"}
 		]
 	}]
 });

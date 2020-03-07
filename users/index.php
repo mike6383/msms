@@ -108,11 +108,8 @@ echo htmlentities($errormsg);
 echo htmlentities($msg);
 		        		}?></p>
 		        <div class="login-wrap">
-<<<<<<< HEAD
 		            <input type="text" class="form-control" name="regno" placeholder="Student regno"  required autofocus>
-=======
-		            <input type="text" class="form-control" name="regno" placeholder="Student Regno"  required autofocus>
->>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
+
 		            <br>
 		            <input type="password" class="form-control" name="password" required placeholder="Password">
 		            <label class="checkbox">

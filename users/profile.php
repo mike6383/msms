@@ -15,15 +15,15 @@ if(isset($_POST['submit']))
 {
 $fname=$_POST['fullname'];
 $contactno=$_POST['contactno'];
-<<<<<<< HEAD
+
 $pincode=$_POST['pincode'];
 $query=mysqli_query($con,"update users set fullName='$fname',contactNo='$contactno' where userEmail='".$_SESSION['login']."'");
-=======
+
 $address=$_POST['address'];
 
 $pincode=$_POST['pincode'];
 $query=mysqli_query($con,"update users set fullName='$fname',contactNo='$contactno' where userRegNo='".$_SESSION['login']."'");
->>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
+
 if($query)
 {
 $successmsg="Profile Successfully !!";
@@ -85,13 +85,10 @@ $errormsg="Profile not updated !!";
  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                       <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg);?></div>
                       <?php }?>
-<<<<<<< HEAD
- <?php $query=mysqli_query($con,"select * from users where userEmail='".$_SESSION['login']."'");
- while($row=mysqli_fetch_array($query))
-=======
+
  <?php $query=mysqli_query($con,"select * from users where userRegNo='".$_SESSION['login']."'");
- while($row=mysqli_fetch_array($query)) 
->>>>>>> 0d785c48b6c413b94dc4ce2eff0aeb984996cfc3
+ while($row=mysqli_fetch_array($query))
+
  {
  ?>
 

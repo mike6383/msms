@@ -26,7 +26,7 @@ move_uploaded_file($_FILES["compfile"]["tmp_name"],"complaintdocs/".$_FILES["com
 $query=mysqli_query($con,"insert into tblcomplaints(userId,category,complaintType,complaintDetails,complaintFile) values('$uid','$category','$complaintype','$complaintdetials','$compfile')");
 
 if($query){
-  sendMessage('+254701241057',"Comlaint registered");
+  sendMessage('+254701241057',"Dear admin, a student has raised a complaint, kindly login and check thank you");
   // code for show complaint number
   $sql=mysqli_query($con,"select complaintNumber from tblcomplaints  order by complaintNumber desc limit 1");
   while($row=mysqli_fetch_array($sql))

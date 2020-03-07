@@ -2,6 +2,8 @@
 // session_start();
 // include('include/config.php');
 
+
+
 $sql="SELECT count(*) as complaints,category FROM `tblcomplaints` join complaintremark on complaintremark.complaintNumber=tblcomplaints.complaintNumber where complaintremark.status='closed' GROUP BY category";
 
 $total_query="Select count(*) as total FROM tblcomplaints";
