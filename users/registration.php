@@ -80,7 +80,7 @@ error:function (){}
 		             <span id="user-availability-status1" style="font-size:12px;"></span>
 		            <br>
 
-		             <input id="phone" type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" required="required" autofocus onBlur="check()">
+		             <input id="phone" type="text" class="form-control" maxlength="10" name="contactno" placeholder="Student Phone no" pattern="^\d{10}$" required="required" autofocus onBlur="check()">
 								 <span id="user-availability-status2" style="font-size:12px;"></span>
 
 		            <br>

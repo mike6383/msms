@@ -75,7 +75,7 @@ while($row=mysqli_fetch_array($query))
 										</tr>
 
 <tr>
-											<td><b>Category </b></td>
+											<td><b>Department </b></td>
 											<td><?php echo htmlentities($row['catname']);?></td>
 
 											<td><b>Complaint Type</b></td>

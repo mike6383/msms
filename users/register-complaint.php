@@ -34,7 +34,7 @@ if($query){
    $cmpn=$row['complaintNumber'];
   }
   $complainno=$cmpn;
-  echo '<script> alert("Your complain has been successfully filled and your complaintno is  "+"'.$complainno.'")</script>';
+  echo '<script> alert("Dear student, thank you for launching the complain, your complain has been successfully sent to the department and will respond as soon as we can, your complaintno is  " + "'.$complainno.'")</script>';
 }
 
 
@@ -110,10 +110,10 @@ function getCat(val) {
                       <form class="form-horizontal style-form" method="post" name="complaint" enctype="multipart/form-data" >
 
 <div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Category</label>
+<label class="col-sm-2 col-sm-2 control-label">Department</label>
 <div class="col-sm-4">
 <select name="category" id="category" class="form-control"  required="">
-<option value="">Select Category</option>
+<option value="">Select Department</option>
 <?php $sql=mysqli_query($con,"select * from department ");
 while ($rw=mysqli_fetch_array($sql)) {
   if($rw['departmentName']!=""){
@@ -141,9 +141,10 @@ while ($rw=mysqli_fetch_array($sql)) {
 <label class="col-sm-2 col-sm-2 control-label">Complaint Type</label>
 <div class="col-sm-4">
 <select name="complaintype" class="form-control" required="">
-                <option value=" Complaint"> Complaint</option>
+                <option value=" Complaint"> Details</option>
                   <option value="General Query">General Query</option>
-                  <option value="General Query">General Query</option>
+                  <option value="General Query">Feedback</option>
+                    <option value="General Query">Technical issue</option>
                 </select>
 </div>
 

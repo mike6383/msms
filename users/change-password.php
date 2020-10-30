@@ -7,17 +7,17 @@ if(strlen($_SESSION['login'])==0)
 header('location:index.php');
 }
 else{
-date_default_timezone_set('Asia/Kolkata');// change according timezone
+date_default_timezone_set('Nairobi/Kenya');
 $currentTime = date( 'd-m-Y h:i:s A', time () );
 
 
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"SELECT password FROM  users where password='".md5($_POST['password'])."' && userEmail='".$_SESSION['login']."'");
+$sql=mysqli_query($con,"SELECT password FROM  users where password='".md5($_POST['password'])."' && userRegNo='".$_SESSION['login']."'");
 $num=mysqli_fetch_array($sql);
 if($num>0)
 {
- $con=mysqli_query($con,"update users set password='".md5($_POST['newpassword'])."', updationDate='$currentTime' where userEmail='".$_SESSION['login']."'");
+ $con=mysqli_query($con,"update users set password='".md5($_POST['newpassword'])."', updationDate='$currentTime' where userRegNo='".$_SESSION['login']."'");
 $successmsg="Password Changed Successfully !!";
 }
 else

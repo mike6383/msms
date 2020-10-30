@@ -36,20 +36,20 @@ $extra="login.php";
 
 if(isset($_POST['change']))
 {
-   $email=$_POST['regno'];
+   $regno=$_POST['regno'];
     $contact=$_POST['contact'];
     $password=md5($_POST['password']);
-$query=mysqli_query($con,"SELECT * FROM users WHERE userRegNo='$email' and contactNo='$contact'");
+$query=mysqli_query($con,"SELECT * FROM users WHERE userRegNo='$regno' and contactNo='$contact'");
 $num=mysqli_fetch_array($query);
 if($num>0)
 {
-mysqli_query($con,"update users set password='$password' WHERE userEmail='$email' and contactNo='$contact' ");
+mysqli_query($con,"update users set password='$password' WHERE userRegNo='$regno' and contactNo='$contact' ");
 $msg="Password Changed Successfully";
 
 }
 else
 {
-$errormsg="Invalid email id or Contact no";
+$errormsg="Invalid Contact no";
 }
 }
 ?>
@@ -141,7 +141,7 @@ echo htmlentities($msg);
 		                      </div>
 		                      <div class="modal-body">
 		                          <p>Enter your details below to reset your password.</p>
-<input type="email" name="regno" placeholder="Regno" autocomplete="off" class="form-control" required><br >
+<input type="text" name="regno" placeholder="Regno" autocomplete="off" class="form-control" required><br >
 <input type="text" name="contact" placeholder="contact No" autocomplete="off" class="form-control" required><br>
  <input type="password" class="form-control" placeholder="New Password" id="password" name="password"  required ><br />
 <input type="password" class="form-control unicase-form-control text-input" placeholder="Confirm Password" id="confirmpassword" name="confirmpassword" required >
